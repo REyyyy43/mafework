@@ -110,7 +110,7 @@ export default function App() {
           <div>
             <h3 className="text-3xl font-bold mb-4 text-[#D29BFD]">Sobre mí</h3>
             <p className="text-gray-600 mb-4 text-xl">
-              Soy Maffer, apasionada por el marketing digital y la creación de
+              Soy Mafe, apasionada por el marketing digital y la creación de
               contenido que conecta con las personas. Me especializo en diseñar
               estrategias creativas y auténticas para redes sociales.
             </p>
