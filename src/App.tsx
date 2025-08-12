@@ -9,6 +9,33 @@ export default function App() {
   const navLinkClass =
     "relative px-2 py-1 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-[#D29BFD] before:origin-left before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100";
 
+  // Aquí agrego el estado para videos y hover
+  const [videoVisibleIndex, setVideoVisibleIndex] = useState(null);
+  const [hoverIndex, setHoverIndex] = useState(null);
+
+  const projects = [
+    {
+      src: "/assets/portafolio1.jpg",
+      role: "Diseño UI/UX y branding",
+      video: "/assets/video1.mp4",
+    },
+    {
+      src: "/assets/portafolio2.jpg",
+      role: "Gestión de redes sociales",
+      video: "/assets/video2.mp4",
+    },
+    {
+      src: "/assets/portafolio3.jpg",
+      role: "Campañas publicitarias digitales",
+      video: "/assets/video3.mp4",
+    },
+    {
+      src: "/assets/portafolio7.jpg",
+      role: "Consultoría en branding personal",
+      video: "/assets/video4.mp4",
+    },
+  ];
+
   return (
     <div className="font-sans bg-white text-gray-800">
       {/* HEADER */}
@@ -145,7 +172,7 @@ export default function App() {
                 Publicidad Digital
               </h4>
               <p className="text-gray-600">
-                Campañas efectivas en Facebook, Instagram y Google Ads.
+                Campañas efectivas, Instagram y Tiktok.
               </p>
             </div>
             <div className="bg-neutral-900 shadow-lg rounded-lg p-6 text-center hover:shadow-xl transition">
@@ -169,54 +196,51 @@ export default function App() {
             Mis Proyectos
           </h3>
 
-          {[ // Array de objetos con src y rol
-            {
-              src: "/assets/portafolio1.jpg",
-              role: "Diseño UI/UX y branding",
-            },
-            {
-              src: "/assets/portafolio2.jpg",
-              role: "Gestión de redes sociales",
-            },
-            {
-              src: "/assets/portafolio3.jpg",
-              role: "Campañas publicitarias digitales",
-            },
-            {
-              src: "/assets/portafolio4.jpg",
-              role: "Fotografía profesional",
-            },
-            {
-              src: "/assets/portafolio5.jpg",
-              role: "Edición y creación de contenido audiovisual",
-            },
-            {
-              src: "/assets/portafolio6.jpg",
-              role: "Estrategia de marketing digital",
-            },
-            {
-              src: "/assets/portafolio7.jpg",
-              role: "Consultoría en branding personal",
-            },
-          ].map(({ src, role }, index) => (
+          {projects.map(({ src, role, video }, index) => (
             <div
               key={index}
               className={`grid md:grid-cols-2 gap-8 items-center mb-12 ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
-              <div className="rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-[250px]">
+              <div
+                className="rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-[250px] relative"
+                onMouseEnter={() => setHoverIndex(index)}
+                onMouseLeave={() => setHoverIndex(null)}
+              >
                 <img
                   src={src}
                   alt={`Proyecto ${index + 1}`}
                   className="max-h-full max-w-full object-contain"
                 />
+                {hoverIndex === index && (
+                  <button
+                    onClick={() =>
+                      setVideoVisibleIndex(
+                        videoVisibleIndex === index ? null : index
+                      )
+                    }
+                    className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#D29BFD] text-white px-4 py-2 rounded hover:bg-[#bb8ff7] transition"
+                  >
+                    {videoVisibleIndex === index ? "Ocultar Video" : "Ver Video"}
+                  </button>
+                )}
               </div>
+
               <div className="text-white">
-                <h4 className="text-2xl font-bold mb-3">
-                  Proyecto {index + 1}
-                </h4>
+                <h4 className="text-2xl font-bold mb-3">Proyecto {index + 1}</h4>
                 <p className="text-gray-300 text-lg">{role}</p>
+
+                {videoVisibleIndex === index && (
+                  <video
+                    src={video}
+                    width="100%"
+                    controls
+                    className="mt-4 rounded-lg shadow-lg"
+                  >
+                    Tu navegador no soporta video HTML5.
+                  </video>
+                )}
               </div>
             </div>
           ))}
