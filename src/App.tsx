@@ -256,6 +256,49 @@ export default function App() {
         </div>
       </section>
 
+      {/* CONTACT */}
+      <section id="contact" className="py-16 px-6 bg-neutral-950">
+        <div className="container mx-auto text-center">
+          <h3 className="text-3xl font-bold text-[#D29BFD] mb-8">Contáctame</h3>
+          <p className="text-gray-300 mb-12 text-lg">
+            Si quieres trabajar conmigo o saber más sobre lo que hago, escríbeme
+            o sígueme en Instagram.
+          </p>
+
+          <div className="flex justify-center gap-12">
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/mafe_ortizduno?igsh=MTZwbXptb2pydWpiNQ=="
+              className="flex flex-col items-center text-white hover:text-[#D29BFD] transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="w-12 h-12 mb-2"
+              >
+                <path
+                  d="M7 2C4.243 2 2 4.243 2 
+            7v10c0 2.757 2.243 5 5 
+            5h10c2.757 0 5-2.243 
+            5-5V7c0-2.757-2.243-5-5-5H7zm10 
+            2c1.654 0 3 1.346 3 
+            3v10c0 1.654-1.346 3-3 
+            3H7c-1.654 0-3-1.346-3-3V7c0-1.654 
+            1.346-3 3-3h10zm-5 
+            3a5 5 0 100 10 5 5 0 000-10zm0 
+            2a3 3 0 110 6 3 3 0 010-6zm4.5-3a1.5 
+            1.5 0 100 3 1.5 1.5 0 000-3z"
+                />
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer id="contact" className="bg-[#0A0A0A] text-white py-6 text-center">
         <p className="text-sm">
