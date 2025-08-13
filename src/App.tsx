@@ -266,6 +266,29 @@ export default function App() {
           </p>
 
           <div className="flex justify-center gap-12">
+            {/* Gmail */}
+            <a
+              href="https://mail.google.com/mail/mu/mp/518/#co"
+              className="flex flex-col items-center text-white hover:text-[#D29BFD] transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="w-12 h-12 mb-2"
+              >
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 
+            1.1.9 2 2 2h16c1.1 0 2-.9 
+            2-2V6c0-1.1-.9-2-2-2zm0 
+            4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+              Gmail
+            </a>
+
             {/* Instagram */}
             <a
               href="https://www.instagram.com/mafe_ortizduno?igsh=MTZwbXptb2pydWpiNQ=="
