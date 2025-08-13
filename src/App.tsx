@@ -18,17 +18,20 @@ export default function App() {
   const projects = [
     {
       src: "/assets/portafolio1.jpg",
-      role: "Diseño UI/UX y branding",
+      title: "Decoramigas VY",
+      role: "Manejo total de Redes Sociales y creación de material audiovisual para la misma",
       link: "https://drive.google.com/drive/folders/129JSYPzpAN48iNn_kbGrNhUEix4S0PhV",
     },
     {
       src: "/assets/portafolio2.jpg",
-      role: "Gestión de redes sociales",
+      title: "Zone bike",
+      role: "Cobertura de eventos especiales y creación de material audiovisual y material con estilo cinematográfico",
       link: "https://drive.google.com/drive/folders/129JSYPzpAN48iNn_kbGrNhUEix4S0PhV",
     },
     {
       src: "/assets/portafolio3.jpg",
-      role: "Campañas publicitarias digitales",
+      title: "Sport Life",
+      role: "Cobertura de evento especial y creación de material audiovisual",
       link: "https://drive.google.com/drive/folders/129JSYPzpAN48iNn_kbGrNhUEix4S0PhV",
     },
   ];
@@ -220,11 +223,11 @@ export default function App() {
             Mis Proyectos
           </h3>
 
-          {projects.map(({ src, role, link }, index) => (
+          {projects.map(({ src, title, role, link }, index) => (
             <div
               key={index}
               className={`grid md:grid-cols-2 gap-8 items-center mb-12 ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
+                index % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
               <div className="rounded-lg shadow-lg overflow-hidden flex items-center justify-center h-[250px] relative">
@@ -236,9 +239,7 @@ export default function App() {
               </div>
 
               <div className="text-white">
-                <h4 className="text-2xl font-bold mb-3">
-                  Proyecto {index + 1}
-                </h4>
+                <h4 className="text-2xl font-bold mb-3">{title}</h4>
                 <p className="text-gray-300 text-lg">{role}</p>
                 <a
                   href={link}
